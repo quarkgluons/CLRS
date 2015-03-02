@@ -32,10 +32,17 @@ int pop(stack *s)
   s->tos--;
   return s->arr[s->tos+1];
 }
+/*
+ *We are not checking the stack overflow as the CLRS book suggests,
+ *we don't worry
+ */
+void push(stack *s, int data)
+{
+  s->tos += 1;
+  s->arr[s->tos] = data;
+}
 
 int main(void)
 {
-  stack * S = create_stack();
-  printf("%d\n", S->tos);
   return 0;
 }
